@@ -12,10 +12,9 @@ export async function getStaticPaths() {
         'post/b'
     ]
     const paths = posts.map((post) => ({
-        params: { slug: post.slug },
+        params: { slug: post },
     }))
 
-    // We'll pre-render only these paths at build time.
     // { fallback: false } means other routes should 404.
     return { paths, fallback: false }
 }
