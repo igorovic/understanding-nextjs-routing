@@ -12,6 +12,5 @@ export async function getStaticPaths() {
     params: { slug: post },
   }));
 
-  // { fallback: false } means other routes should 404.
   return { paths, fallback: false };
 }
