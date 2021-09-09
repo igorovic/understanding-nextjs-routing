@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+When you first create a NEXT.js app with
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+```
+npx create-next-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The file structure is:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+![file structure 1](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mlvf0fqvesbwl3ki471s.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+the `pages` folder contains the page which will be rendered.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Let's add a simple page `contact.js`
 
-## Learn More
+![file structure 2](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e7385jbf53p74on3ybyo.png)
 
-To learn more about Next.js, take a look at the following resources:
+**contact.js**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```js
+export default function Contact() {
+  return (
+    <div>
+      <h1>Contact page</h1>
+    </div>
+  );
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+open `http://localhost:3000/contact`
+and you should see your page title
 
-## Deploy on Vercel
+![contact page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cpa7554f1r1bql00zxke.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> Creating a large number of pages manually becomes quickly cumbersome. Fortunately NEXT.js provides dynamic routes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Dynamic Routes
+
+A dynamic route is basically a javascript file under `pages/` folder with special characters in its name.
+
+**basis examples**
+
+- [id].js
+- [slug].js
+- [user_id].js
+- [name].js
+
+**catch all examples**
+
+- [...id].js
+- [...slug].js
+- [...user_id].js
+- [...name].js
